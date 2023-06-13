@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* =========== Nav ===========*/
+nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 70px;
+    background-color: #2e2e2e;
+}
+nav a{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+nav h3{
+    font-size: 2em;
+    text-transform: uppercase;
+    font-style: italic;
+    
+}
+nav i{
+    font-size: 0.9em;
+    margin: 0 0 0 8px;
+    color: #fff;
+    transform: rotate(6deg);
+    transition: all 0.2s;
+}
+nav a:hover i{
+    color: rgb(179, 179, 179);
+}
+nav button{
+    padding: 0 15px;
+    height: 33px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.1s ease-in-out;
+}
+.right-nav button:nth-child(1){
+    border: 2px solid #fff;
+    color: #fff;
+    background: #686868;
+}
+/* Kalau di Tekan Berubah Warna */
+.right-nav button:nth-child(1):hover{
+    background: #bababa;
+}
+.right-nav button:nth-child(2){
+    background: #ffff;
+    border: none;
+    color: #686868;
+    margin-left: 10px;
+}
+.right-nav button:nth-child(2):hover{
+    background: rgb(240, 240, 240);
+}
+
+/* =========== Main ===========*/
+main{
+    background: rgb(173, 173, 173);
+    padding: 40px 70px;
+}
+
+/* =========== Pencarian ===========*/
+.pencarian{
+    position: relative;
+    margin-top: 40px;
+}
+.judul{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.85em;
+    transform: translate(20px, -50%);
+    background: #fff;
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+form{
+    background: #fff;
+    width: 100%;
+    padding: 55px 20px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.input-pencarian{
+    flex-basis: 93%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
+    gap: 10px;
+}
+.input-pencarian div{
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.1s ease-out;
+}
+.input-pencarian div:focus-within{
+    outline: 2px solid rgb(57, 214, 57);
+}
+.input-pencarian p{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: 500;
+}
+.input-pencarian input, select{
+    width: 100%;
+    height: 70px;
+    padding: 30px 10px 0 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: #F1F1F1;
+    color: #606081;
+    font-size: 0.95em;
+    transition: all 0.09s ease-in-out;
+}
+.input-pencarian input:hover{
+    background: #e4e4e4;
+}
+.input-pencarian select:hover{
+    background: #e4e4e4;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    display: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+select{
+    -webkit-appearance: none;
+}
+select:focus .kosong{
+    display: none;
+}
+.input-pencarian span{
+    position: absolute;
+    left: 70px;
+    bottom: 8px;
+    font-size: .95em;
+    color: #606081;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.1s ease-in-out;
+}
+.input-pencarian input:valid ~ span{
+    opacity: 1;
+    z-index: 1;
+}
+.input-pencarian .fa-caret-down{
+    color: #606081;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.hide-submit{
+    display: none;
+}
+button[type="submit"]{
+    padding: 20px;
+    background: #F1F1F1;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: background 0.1s ease-in-out;
+}
+button[type="submit"]:hover{
+    background: #e4e4e4;
+}
+.fa-equals{
+    color: #606081;
+    font-size: 2em;
+}
+
+/* =========== Jenis Kamar ===========*/
+.jenis-kamar{
+    position: relative;
+    margin-top: 70px;
+}
+.jenis-kamar-content{
+    background: #fff;
+    width: 100%;
+    padding: 55px 20px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    width: 97%;
+    height: 400px;
+}  
+.slideshow-container img{
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.text {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 2px 12px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translatex(-50%);
+    text-align: center;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+/* =========== Lokasi ===========*/
+.lokasi{
+    position: relative;
+    margin-top: 70px;
+}
+.semua-lokasi{
+    background: #fff;
+    width: 100%;
+    padding: 55px 20px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.semua-lokasi div{
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #000;
+}
+.semua-lokasi div:hover img{
+    opacity: 0.6;
+}
+.semua-lokasi img{
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+.semua-lokasi h3{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.semua-lokasi p{
+    position: absolute;
+    top: 35px;
+    left: 10px;
+}
+.semua-lokasi span{
+    text-align: center;
+    width: max-content;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translate(-50%, 0);
+    border: 1px solid #fff;
+    padding: 1px 3px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    font-size: .9em;
+}
+.semua-lokasi div:hover span{
+    opacity: 1;
+    bottom: 10px;
+}
+
+/* =========== Partner ===========*/
+.partner{
+    position: relative;
+    margin-top: 70px;
+}
+.partner-content{
+    background: #fff;
+    width: 100%;
+    padding: 55px 20px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+}
+.partner-text{
+    flex-basis: 37%;
+    line-height: 1.4;
+}
+.partner-logo{
+    flex-basis: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5px;
+}
+.partner-logo a{
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+.partner-logo img{
+    width: 100px;
+    height: 90%;
+}
+.partner-logo .visa{
+    height: 30px;
+}
+
+/* =========== Kelebihan ===========*/
+.kelebihan{
+    position: relative;
+    margin-top: 70px;
+}
+.kelebihan-content{
+    background: #fff;
+    width: 100%;
+    padding: 55px 20px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.kelebihan-content > *{
+    flex-basis: 19%;
+}
+.kelebihan i{
+    border-radius: 50%;
+    padding: 25px;
+    background-color: #f1f1f1;
+    font-size: 3.5em;
+}
+.fa-concierge-bell{
+    color: saddlebrown;
+}
+.fa-money-bill-wave{
+    color: rgb(30, 148, 30);
+}
+.fa-money-check{
+    color: rgb(43, 106, 199);
+}
+.fa-user-shield{
+    color: rgb(189, 35, 35);
+}
+.fa-tags{
+    color: rgb(228, 152, 39);
+}
+.kelebihan h3{
+    margin-top: 10px;
+    font-size: 1.05em;
+}
+
+/* =========== Footer ===========*/
+footer{
+    padding: 10px 70px;
+    text-align: center;
+    background-color: #2e2e2e;
+}
+footer h2{
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+footer i{
+    font-size: 1.15em;
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 31px;
+    padding: 4px 0;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+.footer-btn{
+    padding: 0 15px;
+    height: 33px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.1s ease-in-out;
+    margin-bottom: 10px;
+}
+.footer-nav button:nth-child(1){
+    border: 2px solid #fff;
+    color: #fff;
+    background: #4a0016;
+}
+.footer-btn button:nth-child(1):hover{
+    background: #8c8c8c;
+}
+.footer-btn button:nth-child(2){
+    background: #ffff;
+    border: none;
+    color: #E78EA9;
+    margin-left: 10px;
+}
+.footer-btn button:nth-child(2):hover{
+    background: rgb(240, 240, 240);
+}
+footer button{
+    padding: 0 15px;
+    height: 33px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.1s ease-in-out;
+}
+
+.fa-facebook-f{
+    border: 2px solid rgb(36, 66, 105);
+    color: rgb(36, 66, 105);
+}
+.fa-facebook-f:hover{
+    color: #fff;
+    background-color: rgb(36, 66, 105);
+}
+.fa-twitter{
+    border: 2px solid rgb(0, 110, 255);
+    color: rgb(0, 110, 255);
+}
+.fa-twitter:hover{
+    color: #fff;
+    background-color: rgb(0, 110, 255);
+}
+.fa-google-plus-g{
+    border: 2px solid rgb(207, 58, 58);
+    color: rgb(207, 58, 58);
+}
+.fa-google-plus-g:hover{
+    color: #fff;
+    background-color: rgb(251, 142, 233);
+}
+.fa-youtube{
+    border: 2px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+}
+.fa-youtube:hover{
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+}
+.fa-instagram{
+    border: 2px solid rgb(190, 30, 190);
+    color: rgb(190, 30, 190);
+}
+.fa-instagram:hover{
+    background-color: rgb(190, 30, 190);
+    color: #fff;
+}
+hr{
+    margin: 10px 0;
+    background-color: #fff;
+    height: 2px;
+    border: none;
+    border-radius: 5px;
+}
+footer h3{
+    color: #fff;
+    font-size: 16px;
+}
+
+/* ==== Button Scroll ==== */
+#myBtn {
+    display: none; 
+    position: fixed;
+    bottom: 10px; 
+    right: 20px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #000; 
+    color: #fff; 
+    cursor: pointer;
+    padding: 10px; 
+    border-radius: 7px;
+    font-size: 22px; 
+    transition: all 0.2s ease-out;
+  }  
+  #myBtn:hover {
+    background-color: rgb(75, 75, 75);
+  }
+
+
+/* =========== Responsive ===========*/
+@media only screen and (max-width:1320px) {
+    body > * {
+        padding-inline: 30px;
+    }
+    .input-pencarian{
+        flex-basis: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
+    }
+    .input-pencarian button.hide-submit{
+        display: inherit;
+    }
+    .submit{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    body > * {
+        padding-inline: 10px;
+    }
+    nav h3{
+        font-size: 1.8em;
+   }
+   nav button{
+       padding: 0 8px;
+       height: 30px;
+       border-radius: 7px;
+       cursor: pointer;
+       font-size: 0.8em;
+       font-weight: 600;
+       transition: all 0.1s ease-in-out;
+    }
+   .judul{
+       font-size: 0.8em;
+    }
+    .slideshow-container{
+        height: 350px;
+    }
+    .jenis-kamar img{
+        height: 350px;
+    }
+    .partner-content{
+        flex-direction: column;
+        text-align: center;
+    }
+    .partner p {
+        font-size: 0.9em;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    .kelebihan-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .kelebihan-content i{
+        font-size: 2em;
+        padding: 12px;
+    }
+    .kelebihan-content h3{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    nav button{
+        display: none;
+    }
+}
